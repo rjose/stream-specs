@@ -1,0 +1,31 @@
+Work Streams
+============
+Rino Jose <@rjose>
+
+All streams are tab separated. The first line is a stream header of the form
+"=====<title>". All subsequent lines must start with a tab character.
+
+qplan work v1
+-------------
+The fields of this stream must appear as follows:
+
+        . id :: String
+        . rank :: Int
+        . name :: String
+        . estimate :: String (with format like "Apps:S,Native:2M")
+        . triage :: String  (one of "1", "1.5", "2", "2.5", "3")
+        . track :: String
+        . team :: String
+        . value :: String (this is really a number as a string)
+        . prereqs :: String
+
+The estimate string has a format like "Apps:S,Native:2M". This is a comma
+separated list of skill/estimate pairs. Estimates are S, M, L, and Q which are
+interpreted as 1, 2, 3, and 13 man-weeks, respectively. A scalar factor may
+precede the estimate. The intent is that there are multiple people required
+for that time. For instance, "App:3M" can be interpreted as needing 3 apps
+engineers for 2 weeks each.
+
+The prereqs field should be a comma separated list of task IDs (e.g.,
+"2EA61,B2142") and is meant to represent tasks in other teams that depend on
+this task.

@@ -1,0 +1,16 @@
+Staff Streams
+=============
+Rino Jose <@rjose>
+
+All streams are tab separated. The first line is a stream header of the form
+"=====<title>". All subsequent lines must start with a tab character.
+
+qplan staff v1
+--------------
+The fields of this stream must appear as follows:
+
+        . id :: String
+        . name :: String
+        . team :: String
+        . track :: String
+        . skill :: String
